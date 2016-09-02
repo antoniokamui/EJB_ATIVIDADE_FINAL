@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:loadBundle basename="resources.application" var="msg" />
+
+<head>
+<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</head>
+
+<body>
+	<h:form>
+		<label>Data</label>
+		<h:inputText value="#{comentarioProdutoMB.comentarioProduto.data}">
+			<f:convertDateTime pattern="dd/MM/yyyy" />
+		</h:inputText>
+		<br /><br />
+		<label>Título</label>
+		<h:inputText  value="#{comentarioProdutoMB.comentarioProduto.titulo}"></h:inputText>
+		<br /><br />
+		<label>Assunto</label>
+		<h:inputText  value="#{comentarioProdutoMB.comentarioProduto.assunto}"></h:inputText>
+		<br /><br />
+		<label>Comentário</label>
+		<h:inputText  value="#{comentarioProdutoMB.comentarioProduto.comentario}"></h:inputText>
+		<br /><br />
+		<label>Avaliação</label>
+		<h:inputText  value="#{comentarioProdutoMB.comentarioProduto.avaliacao}">
+			<f:convertNumber integerOnly="true"></f:convertNumber>
+		</h:inputText>
+		<br /><br />
+		<h:commandButton action="#{comentarioProdutoMB.inserirComentarioProduto}" value="Enviar"></h:commandButton>
+		<br /><br />
+		<input type="reset" value="Limpar"></input>
+	</h:form>
+	<h:dataTable value="#{comentarioProdutoMB.listaComentario}" var="lista" border="1" style="text-align:center" rendered="#{not empty comentarioProdutoMB.listaComentario}">
+		<h:column>
+		 	<f:facet name="header">
+            	<h:outputText value="Data"/>
+        	</f:facet>
+			#{lista.data}
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+            	<h:outputText value="Titulo"/>
+        	</f:facet>
+			#{lista.titulo}
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+            	<h:outputText value="Assunto"/>
+        	</f:facet>
+			#{lista.assunto}
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+            	<h:outputText value="Comentario"/>
+        	</f:facet>
+			#{lista.comentario}
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+            	<h:outputText value="Avaliacao"/>
+        	</f:facet>
+			#{lista.avaliacao}
+		</h:column>
+	</h:dataTable>
+</body>
+</html>

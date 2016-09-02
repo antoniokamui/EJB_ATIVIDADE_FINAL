@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Ativ_ECommerceEJBEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="Ativ_ECommerceEJB.jar" deploy-path="/" handle="module:/resource/Ativ_ECommerceEJB/Ativ_ECommerceEJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Ativ_ECommerceEJBClient.jar" deploy-path="/" handle="module:/resource/Ativ_ECommerceEJBClient/Ativ_ECommerceEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

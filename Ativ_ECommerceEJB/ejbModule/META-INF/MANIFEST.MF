@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: Ativ_ECommerceEJBClient.jar
+
